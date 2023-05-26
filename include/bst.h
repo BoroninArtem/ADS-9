@@ -31,7 +31,7 @@ private:
         return root;
     }
     int Depth(Node* root) {
-        if (root == nullptr) {
+        if (!root) {
             return 0;
         }
         return 1 + std::max(Depth(root->left), Depth(root->right));
@@ -40,18 +40,16 @@ private:
         int a = 0;
         if (root->val == val) {
             a = root->count;
-        }
-        if (root->val > val) {
+        } else if (root->val > val) {
             a = Search(root->left, val);
-        }
-        if (root->val < val) {
+        } else if (root->val < val) {
             a = Search(root->right, val);
         }
         return a;
     }
 
 public:
-    BST() :root(nullptr) {};
+    BST():root(nullptr) {};
     void add(T val) {
         root = add_Node(root, val);
     }
