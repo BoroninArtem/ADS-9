@@ -4,6 +4,7 @@
 #include  <locale>
 #include  <cstdlib>
 #include  "bst.h"
+
 BST<std::string> makeTree(const char* filename) {
     BST<std::string> bst;
     std::ifstream file(filename);
@@ -17,9 +18,8 @@ BST<std::string> makeTree(const char* filename) {
         }
         if (c >= 97 && c <= 122) {
             str += c;
-        }
-        else {
-            if (str.empty() != 0) {
+        } else {
+            if (!str.empty()) {
                 bst.add(str);
             }
             str.clear();
