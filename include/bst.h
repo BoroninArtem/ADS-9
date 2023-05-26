@@ -49,7 +49,7 @@ class BST {
     }
 
  public:
-    BST():root(nullptr) {};
+    BST():root(nullptr) {}
     void add(T val) {
         root = add_Node(root, val);
     }
