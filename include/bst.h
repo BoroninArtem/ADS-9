@@ -6,7 +6,7 @@
 template<typename T>
 
 class BST {
-private:
+ private:
     struct Node {
         Node* left;
         Node* right;
@@ -48,7 +48,7 @@ private:
         return a;
     }
 
-public:
+ public:
     BST():root(nullptr) {};
     void add(T val) {
         root = add_Node(root, val);
